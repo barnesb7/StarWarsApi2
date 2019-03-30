@@ -11,4 +11,9 @@ public class CharacterController {
     public String displayHomePage(){
         return "homepage";
     }
+
+    @RequestMapping("/detailsPage")
+    public String displayCharacterDetailsPage(){
+        return "detailsPage";
+    }
 }
