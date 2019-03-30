@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan
 public class AppConfiguration {
 
-    public static void man(String[] args){
+    public static void main(String[] args){
         SpringApplication.run(AppConfiguration.class, args);
     }
 
