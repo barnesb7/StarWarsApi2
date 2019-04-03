@@ -45,10 +45,10 @@ public class CharacterController {
         return "homepage";
     }
 
-    @RequestMapping("/detailsPage")
-    public String displayCharacterDetailsPage(ModelMap modelMap){
+    @RequestMapping("/detailsPage/{characterId}")
+    public String displayCharacterDetailsPage(@PathVariable(name="characterId") String characterId, ModelMap modelMap){
 
-        ResponseEntity<StarWarsCharacter> responseEntity = starWarsService.fetchCharacter("1");
+        ResponseEntity<StarWarsCharacter> responseEntity = starWarsService.fetchCharacter(characterId);
 
         modelMap.put("name", responseEntity.getBody().getName());
 //        modelMap.put("birth_year", responseEntity.getBody().getBirth_year());
