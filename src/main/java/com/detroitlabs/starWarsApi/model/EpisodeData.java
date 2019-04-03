@@ -10,17 +10,17 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class EpisodeData {
 
-    private String title;
+    private String episodeTitle;
     private List<String> characters = new ArrayList<>();
 
     @JsonProperty("title")
-    public String getTitle() {
-        return title;
+    public String getEpisodeTitle() {
+        return episodeTitle;
     }
 
     @JsonProperty("title")
-    public void setTitle(String title) {
-        this.title = title;
+    public void setEpisodeTitle(String episodeTitle) {
+        this.episodeTitle = episodeTitle;
     }
 
     @JsonProperty("characters")

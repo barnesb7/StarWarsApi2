@@ -1,6 +1,7 @@
 package com.detroitlabs.starWarsApi.controller;
 
 import com.detroitlabs.starWarsApi.Service.StarWarsService;
+import com.detroitlabs.starWarsApi.data.EpisodeRepository;
 import com.detroitlabs.starWarsApi.model.EpisodeData;
 import com.detroitlabs.starWarsApi.model.Planet;
 import com.detroitlabs.starWarsApi.model.StarWarsCharacter;
@@ -26,16 +27,18 @@ public class CharacterController {
     @RequestMapping("/")
     public String displayHomePage(ModelMap modelMap){
 
-        ResponseEntity<StarWarsCharacter> responseEntity = starWarsService.fetchCharacter("1");
+        ResponseEntity<StarWarsCharacter> responseEntity = starWarsService.fetchCharacter("18");
 
-        ResponseEntity<EpisodeData> episodeEntity = starWarsService.fetchEpisodeData();
+        ResponseEntity<EpisodeData> episodeDataEntity = starWarsService.fetchEpisodeData();
 
         String characterHomeworldUri = responseEntity.getBody().getHomeworld();
 
         ResponseEntity<Planet> planetEntity = starWarsService.fetchCharacterPlanet(characterHomeworldUri);
 
+        modelMap.put("body", episodeDataEntity.toString());
         modelMap.put("name", responseEntity.getBody().getName());
         modelMap.put("homeworld", planetEntity.getBody().getPlanetName());
+       // modelMap.put("episodeTitle", episodeDataEntity.getBody().getEpisodeTitle());
 
         //modelMap.put("title", characters.toString());
 
