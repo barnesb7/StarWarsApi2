@@ -1,6 +1,7 @@
 package com.detroitlabs.starWarsApi.Service;
 
 import com.detroitlabs.starWarsApi.model.EpisodeData;
+import com.detroitlabs.starWarsApi.model.Planet;
 import com.detroitlabs.starWarsApi.model.StarWarsCharacter;
 import org.springframework.http.*;
 import org.springframework.stereotype.Component;
@@ -22,6 +23,18 @@ public class StarWarsService {
 
         return characterEntity;
     }
+
+    public ResponseEntity<Planet> fetchCharacterPlanet(String planetUri) {
+        RestTemplate restTemplate = new RestTemplate();
+        String uri = planetUri;
+
+        HttpEntity<String> entity = setDefaultHeaderInformation();
+
+        ResponseEntity<Planet> planetEntity = restTemplate.exchange(uri, HttpMethod.GET, entity, Planet.class);
+
+        return planetEntity;
+    }
+
 
     public ResponseEntity<EpisodeData> fetchEpisodeData() {
 

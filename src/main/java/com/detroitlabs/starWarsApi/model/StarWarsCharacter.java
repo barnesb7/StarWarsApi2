@@ -9,6 +9,7 @@ public class StarWarsCharacter {
     private String name;
     private String birth_year;
     private String hair_color;
+    private String homeworld;
 
     @JsonProperty("name")
     public String getName() {
@@ -38,5 +39,15 @@ public class StarWarsCharacter {
     @JsonProperty("hair_color")
     public void setHair_color(String hair_color) {
         this.hair_color = hair_color;
+    }
+
+    @JsonProperty("homeworld")
+    public String getHomeworld() {
+        return homeworld;
+    }
+
+    @JsonProperty("homeworld")
+    public void setHomeworld(String homeworld) {
+        this.homeworld = homeworld;
     }
 }
