@@ -2,11 +2,11 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <episodeTitle>Home</episodeTitle>
+    <title>Homepage</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<h1>Home page works</h1>
+<h1>The Empire Strikes Back</h1>
 
 <ul>
     <a th:href="@{/detailsPage/1}"><li>Luke Skywalker</li></a>
@@ -26,16 +26,6 @@
     <a th:href="@{/detailsPage/25}"><li>Lando Calrissian</li></a>
     <a th:href="@{/detailsPage/26}"><li>Lobot</li></a>
 </ul>
-
-<a th:href="@{/detailspage}">hit page</a>
-
-<h1 th:text="${body}"></h1>
-<h1 th:text="${homeworld}"></h1>
-<h1 th:text="${name}"></h1>
-<!--<h1 th:text="${episodeTitle}"></h1>-->
-
-<a th:href="@{/detailsPage}">details page</a>
-
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

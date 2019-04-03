@@ -27,20 +27,6 @@ public class CharacterController {
     @RequestMapping("/")
     public String displayHomePage(ModelMap modelMap){
 
-        ResponseEntity<StarWarsCharacter> responseEntity = starWarsService.fetchCharacter("18");
-
-        ResponseEntity<EpisodeData> episodeDataEntity = starWarsService.fetchEpisodeData();
-
-        String characterHomeworldUri = responseEntity.getBody().getHomeworld();
-
-        ResponseEntity<Planet> planetEntity = starWarsService.fetchCharacterPlanet(characterHomeworldUri);
-
-        modelMap.put("body", episodeDataEntity.toString());
-        modelMap.put("name", responseEntity.getBody().getName());
-        modelMap.put("homeworld", planetEntity.getBody().getPlanetName());
-       // modelMap.put("episodeTitle", episodeDataEntity.getBody().getEpisodeTitle());
-
-        //modelMap.put("title", characters.toString());
 
         return "homepage";
     }
@@ -50,8 +36,16 @@ public class CharacterController {
 
         ResponseEntity<StarWarsCharacter> responseEntity = starWarsService.fetchCharacter(characterId);
 
+        ResponseEntity<EpisodeData> episodeDataEntity = starWarsService.fetchEpisodeData();
+
+        String characterHomeworldUri = responseEntity.getBody().getHomeworld();
+
+        ResponseEntity<Planet> planetEntity = starWarsService.fetchCharacterPlanet(characterHomeworldUri);
+
         modelMap.put("name", responseEntity.getBody().getName());
-//        modelMap.put("birth_year", responseEntity.getBody().getBirth_year());
+        modelMap.put("birthYear", responseEntity.getBody().getBirthYear());
+        modelMap.put("gender", responseEntity.getBody().getGender());
+        modelMap.put("homeworld", planetEntity.getBody().getPlanetName());
 
         return "detailsPage";
     }

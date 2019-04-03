@@ -7,8 +7,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class StarWarsCharacter {
 
     private String name;
-    private String birth_year;
-    private String hair_color;
+    private String birthYear;
+    private String gender;
     private String homeworld;
 
     @JsonProperty("name")
@@ -22,23 +22,23 @@ public class StarWarsCharacter {
     }
 
     @JsonProperty("birth_year")
-    public String getBirth_year() {
-        return birth_year;
+    public String getBirthYear() {
+        return birthYear;
     }
 
     @JsonProperty("birth_year")
-    public void setBirth_year(String birth_year) {
-        this.birth_year = birth_year;
+    public void setBirthYear(String birthYear) {
+        this.birthYear = birthYear;
     }
 
-    @JsonProperty("hair_color")
-    public String getHair_color() {
-        return hair_color;
+    @JsonProperty("gender")
+    public String getGender() {
+        return gender;
     }
 
-    @JsonProperty("hair_color")
-    public void setHair_color(String hair_color) {
-        this.hair_color = hair_color;
+    @JsonProperty("gender")
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     @JsonProperty("homeworld")
