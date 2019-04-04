@@ -1,5 +1,6 @@
 package com.detroitlabs.starWarsApi.Service;
 
+import com.detroitlabs.starWarsApi.model.EpisodeData;
 import com.detroitlabs.starWarsApi.model.StarWarsCharacter;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -37,6 +38,21 @@ public class StarWarsServiceTest {
         assertEquals(200, actualResponseEntity.getStatusCodeValue());
 
     }
+
+    @Test
+    public void shouldHave200StatusWhenGettingEpisodeData(){
+
+        Mockito
+                .when(restTemplate.getForEntity("https://swapi.co/api/films" , EpisodeData.class))
+                .thenReturn(new ResponseEntity("endpoint hit", HttpStatus.OK));
+
+        ResponseEntity<EpisodeData> actualResponseEntity = starWarsService.fetchEpisodeData();
+
+        assertEquals("The Empire Strikes Back", actualResponseEntity.getBody().getEpisodeTitle());
+        assertEquals(200, actualResponseEntity.getStatusCodeValue());
+
+    }
+
 
 
 }

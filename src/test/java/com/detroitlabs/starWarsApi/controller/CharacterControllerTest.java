@@ -16,7 +16,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringJUnit4ClassRunner.class)
 public class CharacterControllerTest {
 
-
     private MockMvc mockMvc;
 
     @InjectMocks

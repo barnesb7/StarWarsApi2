@@ -34,7 +34,7 @@ public class StarWarsService {
     public ResponseEntity<EpisodeData> fetchEpisodeData() {
 
         RestTemplate restTemplate = new RestTemplate();
-        String uri = "http://swapi.co/api/films/2";
+        String uri = "https://swapi.co/api/films/2";
         HttpEntity<String> entity = createHttpEntity();
 
         return restTemplate.exchange(uri, HttpMethod.GET, entity, EpisodeData.class);
